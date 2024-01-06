@@ -15,7 +15,7 @@
 	"plugins": ["react", "prettier", "import"],
 	"rules": {
 		"indent": ["error", "tab"],
-		"prettier/prettier": "error",
+		"prettier/prettier": ["error", { "endOfLine": "auto", "printWidth": 180 }],
 		"linebreak-style": [0, "unix"],
 		"quotes": ["error", "single"],
 		"semi": ["error", "always"],
