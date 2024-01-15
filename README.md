@@ -1,1 +1,1 @@
-# [Deploy](aviasales-app.netlify.app)
+# [Deploy](https://aviasales-app.netlify.app)

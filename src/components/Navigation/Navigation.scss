@@ -2,7 +2,7 @@
 	&__inner {
 		display: flex;
 		height: 10rem;
-		background-color: $white;
+		background-color: #fff;
 		border-radius: 1rem;
 
 		box-shadow: 0 0.4rem 1.6rem 0 rgba(0, 0, 0, 0.1);
@@ -25,10 +25,10 @@
 		}
 
 		&.active {
-			background-color: $blue;
-			color: $white;
+			background-color: #2196f3;
+			color: #fff;
 			&:hover {
-				background-color: $blue;
+				background-color: #2196f3;
 			}
 		}
 

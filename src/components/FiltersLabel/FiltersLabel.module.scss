@@ -16,14 +16,14 @@
 }
 .checkbox {
 	display: none;
-	&:not(:disabled):checked ~ .custom-checkbox {
-		border: 0.2rem solid $blue;
+	&:not(:disabled):checked ~ .custom__checkbox {
+		border: 0.2rem solid #2196f3;
 		&::after {
 			display: block;
 		}
 	}
 }
-.custom-checkbox {
+.custom__checkbox {
 	width: 4rem;
 	height: 4rem;
 	border-radius: 0.4rem;
@@ -56,7 +56,7 @@
 			transition: none;
 		}
 	}
-	.custom-checkbox {
+	.custom__checkbox {
 		border-radius: 0.8rem;
 	}
 }
