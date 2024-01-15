@@ -1,8 +1,10 @@
 // eslint-disable-next-line import/namespace
 import { createSlice } from '@reduxjs/toolkit';
 
+import { filterCheckboxes } from '../../utils/localData';
+
 const initialState = {
-	filterBy: [0, 1, 2, 3, 4],
+	filterBy: [...filterCheckboxes.map(item => item.id)],
 };
 
 const filterSlice = createSlice({
@@ -24,7 +26,7 @@ const filterSlice = createSlice({
 				} else {
 					state.filterBy = [...state.filterBy, id];
 
-					const containsAllNumbers = [1, 2, 3, 4].every(num => state.filterBy.includes(num));
+					const containsAllNumbers = [...initialState.filterBy.slice(1)].every(num => state.filterBy.includes(num));
 					if (containsAllNumbers && !state.filterBy.includes(0)) {
 						state.filterBy = [...state.filterBy, 0];
 					}
@@ -35,21 +37,3 @@ const filterSlice = createSlice({
 });
 export const { setFilter } = filterSlice.actions;
 export default filterSlice.reducer;
-
-// if (id === 0) {
-// 	const allCheckbox = state.filterBy.find(item => item.id === 0);
-// 	allCheckbox.active = !allCheckbox.active;
-
-// 	state.filterBy.forEach(item => {
-// 		if (item.id !== 0) {
-// 			item.active = allCheckbox.active;
-// 		}
-// 	});
-// } else {
-// 	const selectedCheckbox = state.filterBy.find(item => item.id === id);
-// 	selectedCheckbox.active = !selectedCheckbox.active;
-
-// 	const allOtherCheckboxesSelected = state.filterBy.filter(item => item.id !== 0).every(item => item.active);
-// 	const allCheckbox = state.filterBy.find(item => item.id === 0);
-// 	allCheckbox.active = allOtherCheckboxesSelected;
-// }

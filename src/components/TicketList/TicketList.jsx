@@ -21,7 +21,7 @@ const TicketList = () => {
 	const elements = sortedTickets.slice(0, count).map(el => {
 		return <Ticket key={nanoid()} {...el} />;
 	});
-	const sortedList = elements.length && status !== 'error';
+	const sortedList = elements.length > 0 && status !== 'error';
 	const emptyMessage = status !== 'error' && status !== 'loading' ? <Alert message='Рейсов, подходящих под заданные фильтры, не найдено' type='info' showIcon /> : null;
 
 	return (
