@@ -7,9 +7,10 @@ const NavigationButton = ({ title, sort, onClick }) => {
 	if (sort === sortBy) classes += ' active';
 
 	return (
-		<button className={classes} type='button' onClick={onClick}>
+		<label className={classes}>
+			<input type='radio' name='navigation' checked={sort === sortBy} onChange={onClick} />
 			{title}
-		</button>
+		</label>
 	);
 };
 

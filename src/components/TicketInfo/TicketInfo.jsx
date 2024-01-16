@@ -2,11 +2,12 @@ import TicketInfoItem from '../TicketInfoItem/TicketInfoItem';
 
 import style from './TicketInfo.module.scss';
 
-const TicketInfo = props => {
+const TicketInfo = ({ segments }) => {
 	return (
 		<ul className={style['ticket-info']}>
-			<TicketInfoItem info={props.segments[0]} {...props} />
-			<TicketInfoItem info={props.segments[1]} {...props} />
+			{segments.map((el, id) => (
+				<TicketInfoItem key={id} {...el} />
+			))}
 		</ul>
 	);
 };

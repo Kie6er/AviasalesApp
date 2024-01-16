@@ -9,6 +9,7 @@
 		overflow: hidden;
 	}
 	&__btn {
+		cursor: pointer;
 		width: 100%;
 		display: flex;
 		align-items: center;
@@ -30,6 +31,11 @@
 			&:hover {
 				background-color: #2196f3;
 			}
+		}
+
+		input {
+			display: none;
+			appearance: none;
 		}
 
 		&:hover {

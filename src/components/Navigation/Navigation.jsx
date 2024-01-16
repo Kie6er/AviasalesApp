@@ -11,11 +11,11 @@ const Navigation = () => {
 
 	return (
 		<div className='navigation'>
-			<div className='navigation__inner'>
+			<nav className='navigation__inner'>
 				{sortButtons.map(btn => (
 					<NavigationButton key={btn.sort} {...btn} onClick={() => dispatch(setSort(btn.sort))} />
 				))}
-			</div>
+			</nav>
 		</div>
 	);
 };

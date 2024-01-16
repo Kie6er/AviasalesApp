@@ -3,24 +3,25 @@ import { formatMinutesToHoursAndMinutes, calculateArrivalTime } from '../../util
 import style from './TicketInfoItem.module.scss';
 
 const TicketInfoItem = props => {
-	const { info } = props;
-
+	const { origin, destination, date, duration, stops } = props;
 	return (
-		<li className={style['ticket-info-item']}>
-			<div className={style['ticket-info-item__item']}>
-				<span>
-					{info.origin} – {info.destination}
-				</span>
-				<strong>{calculateArrivalTime(info.date, info.duration)}</strong>
-			</div>
-			<div className={style['ticket-info-item__item']}>
-				<span>В пути</span>
-				<strong>{formatMinutesToHoursAndMinutes(info.duration)}</strong>
-			</div>
-			<div className={style['ticket-info-item__item']}>
-				<span>{info.stops.length === 0 ? 'нет пересадок' : info.stops.length === 1 ? `${info.stops.length} пересадка` : `${info.stops.length} пересадки`}</span>
-				<strong>{info.stops.join(', ')}</strong>
-			</div>
+		<li>
+			<ul className={style['ticket-info-item']}>
+				<li className={style['ticket-info-item__item']}>
+					<span>
+						{origin} – {destination}
+					</span>
+					<strong>{calculateArrivalTime(date, duration)}</strong>
+				</li>
+				<li className={style['ticket-info-item__item']}>
+					<span>В пути</span>
+					<strong>{formatMinutesToHoursAndMinutes(duration)}</strong>
+				</li>
+				<li className={style['ticket-info-item__item']}>
+					<span>{stops.length === 0 ? 'нет пересадок' : stops.length === 1 ? `${stops.length} пересадка` : `${stops.length} пересадки`}</span>
+					<strong>{stops.join(', ')}</strong>
+				</li>
+			</ul>
 		</li>
 	);
 };
